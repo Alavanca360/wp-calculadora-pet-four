@@ -74,7 +74,6 @@ wp-calculadora-pet-four/
 │   └── form-ui.php           # Formulário estilizado
 │
 ├── wp-calculadora-pet-four.php  # Arquivo principal do plugin
-├── readme.txt
 └── README.md
 ```
 
@@ -89,6 +88,11 @@ wp-calculadora-pet-four/
 ```php
 [pet_food_calculator]
 ```
+
+## 🔄 Funcionamento via AJAX
+
+O cálculo é processado de forma assíncrona no WordPress. O script `assets/script.js` envia o animal selecionado e o peso para a action `pet_calculator`, que responde com a quantidade ideal em gramas.
+
 
 ---
 
@@ -112,7 +116,7 @@ wp-calculadora-pet-four/
 
 ## 📃 Licença
 
-MIT License © 2025 Alavanca360 / Pet Four
+GNU General Public License v2.0 or later
 
 ---
 

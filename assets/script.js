@@ -28,7 +28,7 @@
       }
 
       const formData = new FormData();
-      formData.append('action', 'pet_four_calculate');
+      formData.append('action', 'pet_calculator');
       formData.append('animal', selectedPet);
       formData.append('peso', peso);
 
@@ -36,9 +36,13 @@
         method: 'POST',
         body: formData
       })
-        .then(resp => resp.text())
-        .then(text => {
-          resultDiv.textContent = text;
+        .then(resp => resp.json())
+        .then(data => {
+          if (data && data.success && data.data && data.data.valor) {
+            resultDiv.textContent = data.data.valor + ' g/dia';
+          } else {
+            resultDiv.textContent = 'Erro ao calcular.';
+          }
         })
         .catch(() => {
           resultDiv.textContent = 'Erro ao calcular.';
